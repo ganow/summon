@@ -19,7 +19,7 @@ generatorDir = (target) ->
 createReadableArgs = (argv) ->
   args = {}
   for k, v of argv when k[0] isnt '$'
-    if v.length
+    if v instanceof Array
       for i, index in v[0..]
         args['$'+(index)] = i
     else # if typeof v is 'string'
