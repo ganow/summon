@@ -62,6 +62,15 @@ module.exports = main = (argv) ->
         , presetGenratorGenerator.defaultGenerator
       fs.writeFileSync (path.join CWD, '.generators', 'generator', 'dummy.json.hbs')
         , presetGenratorGenerator.dummyJson
+    
+    when undefined
+      console.log '''
+                  Usage:
+                    summon init                 initialize current directory
+                    summon generator <command>  generate generater <command>
+                    summon <command> [args]     generate files with template in <command>
+                    summon                      display this help message
+                  '''
 
     # when 'generate'
     else
